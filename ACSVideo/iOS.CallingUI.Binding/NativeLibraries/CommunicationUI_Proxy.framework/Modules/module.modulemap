@@ -1,0 +1,11 @@
+framework module CommunicationUI_Proxy {
+  umbrella header "CommunicationUI_Proxy.h"
+  export *
+
+  module * { export * }
+}
+
+module CommunicationUI_Proxy.Swift {
+  header "CommunicationUI_Proxy-Swift.h"
+  requires objc
+}
