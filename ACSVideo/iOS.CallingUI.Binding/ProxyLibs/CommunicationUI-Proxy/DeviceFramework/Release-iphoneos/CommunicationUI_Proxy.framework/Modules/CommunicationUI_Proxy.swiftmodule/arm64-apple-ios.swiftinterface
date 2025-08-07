@@ -1,0 +1,163 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios15.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CommunicationUI_Proxy
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AVFoundation
+import AzureCommunicationCommon
+import AzureCommunicationUICalling
+import CallKit
+@_exported import CommunicationUI_Proxy
+import Foundation
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_inheritsConvenienceInitializers @objcMembers public class GroupCallObjectProxy : ObjectiveC.NSObject {
+  @objc public var groupId: Swift.String
+  @objc public var displayName: Swift.String
+  @objc public func setGroupCallProperties(_ groupId: Swift.String, displayName: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class RoomsCallObjectProxy : ObjectiveC.NSObject {
+  @objc public var roomId: Swift.String
+  @objc public var displayName: Swift.String
+  @objc public func setRoomsCallProperties(_ roomId: Swift.String, displayName: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TeamsMeetingObjectProxy : ObjectiveC.NSObject {
+  @objc public var teamsMeetingLink: Swift.String
+  @objc public var displayName: Swift.String
+  @objc public func setTeamsMeetingsProperties(_ teamsMeetingLink: Swift.String, displayName: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationPersonaDataProxy : ObjectiveC.NSObject {
+  @objc public var avatarImage: UIKit.UIImage?
+  @objc public var renderDisplayName: Swift.String
+  @objc public func setPersonaDataProperties(_ avatarImage: UIKit.UIImage?, renderDisplayName: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationLocalDataOptionProxy : ObjectiveC.NSObject {
+  @objc public var personaData: CommunicationUI_Proxy.CommunicationPersonaDataProxy?
+  @objc public var skipSetupScreen: Swift.Bool
+  @objc public var microphoneOn: Swift.Bool
+  @objc public var cameraOn: Swift.Bool
+  @objc public var audioVideoMode: Swift.String?
+  @objc public var callScreenTitle: Swift.String?
+  @objc public var callScreenSubtitle: Swift.String?
+  @objc public var updateTitleSubtitleOnParticipantCountChange: Swift.Bool
+  @objc public func setLocalDataOptionProperties(_ personaData: CommunicationUI_Proxy.CommunicationPersonaDataProxy)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationThemeProxy : ObjectiveC.NSObject {
+  @objc public var primaryColor: UIKit.UIColor
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationLocalizationProxy : ObjectiveC.NSObject {
+  @objc public var locale: Foundation.Locale
+  @objc public var localizableFilename: Swift.String
+  @objc public var isLeftToRight: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationErrorProxy : ObjectiveC.NSObject {
+  @objc public var code: Swift.String
+  @objc public var error: Foundation.NSError?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationDismissedProxy : ObjectiveC.NSObject {
+  @objc public var errorCode: Swift.String?
+  @objc public var error: Foundation.NSError?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationCallStateProxy : ObjectiveC.NSObject {
+  @objc public var code: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationScreenOrientationProxy : ObjectiveC.NSObject {
+  @objc public var callScreenOrientation: Swift.String
+  @objc public var setupScreenOrientation: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CallHistoryRecordProxy : ObjectiveC.NSObject {
+  @objc public var callStartedOn: Foundation.Date?
+  @objc public var callIds: [Swift.String]?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class VersionsProxy : ObjectiveC.NSObject {
+  @objc public var callingUIVersion: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class DebugInfoProxy : ObjectiveC.NSObject {
+  @objc public var callHistoryRecords: [CommunicationUI_Proxy.CallHistoryRecordProxy]?
+  @objc public var logFiles: [Foundation.URL]?
+  @objc public var versions: CommunicationUI_Proxy.VersionsProxy?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CallCompositeUserReportedIssueProxy : ObjectiveC.NSObject {
+  @objc public var userMessage: Swift.String?
+  @objc public var debugInfo: CommunicationUI_Proxy.DebugInfoProxy?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CallScreenControlBarOptionsProxy : ObjectiveC.NSObject {
+  @objc public var leaveCallConfirmationMode: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CallScreenOptionsProxy : ObjectiveC.NSObject {
+  @objc public var callScreenControlBarOptions: CommunicationUI_Proxy.CallScreenControlBarOptionsProxy?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IncomingCallProxy : ObjectiveC.NSObject {
+  @objc public var callId: Swift.String?
+  @objc public var callerDisplayName: Swift.String?
+  @objc public var callerIdentifierMri: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IncomingCallCancelledProxy : ObjectiveC.NSObject {
+  @objc public var callId: Swift.String?
+  @objc public var code: Swift.Int
+  @objc public var subCode: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CallKitRemoteInfoProxy : ObjectiveC.NSObject {
+  @objc public var cxHandleName: Swift.String?
+  @objc public var displayName: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CommunicationUIProxy : ObjectiveC.NSObject {
+  @objc public func createCallComposite(token: Swift.String, displayName: Swift.String, theme: CommunicationUI_Proxy.CommunicationThemeProxy?, localization: CommunicationUI_Proxy.CommunicationLocalizationProxy?, orientationProxy: CommunicationUI_Proxy.CommunicationScreenOrientationProxy?, enableMultitasking: Swift.Bool, enableSystemPictureInPictureWhenMultitasking: Swift.Bool, enableCallKit: Swift.Bool, callScreenOptionsProxy: CommunicationUI_Proxy.CallScreenOptionsProxy?, errorCallback: ((CommunicationUI_Proxy.CommunicationErrorProxy) -> Swift.Void)?, onRemoteParticipantJoinedCallback: (([Swift.String]) -> Swift.Void)?, onCallStateChangedCallback: ((CommunicationUI_Proxy.CommunicationCallStateProxy) -> Swift.Void)?, onDismissedCallback: ((CommunicationUI_Proxy.CommunicationDismissedProxy) -> Swift.Void)?, onUserReportedIssueCallback: ((CommunicationUI_Proxy.CallCompositeUserReportedIssueProxy) -> Swift.Void)?, onIncomingCallProvideRemoteInfo: (((Swift.String) -> CommunicationUI_Proxy.CallKitRemoteInfoProxy))?, onIncomingCall: ((CommunicationUI_Proxy.IncomingCallProxy) -> Swift.Void)?, onIncomingCallCancelled: ((CommunicationUI_Proxy.IncomingCallCancelledProxy) -> Swift.Void)?, onIncomingCallAcceptedFromCallKit: (((Swift.String) -> Swift.Void))?)
+  @objc public func startExperience(groupCall: CommunicationUI_Proxy.GroupCallObjectProxy, localData: CommunicationUI_Proxy.CommunicationLocalDataOptionProxy?, callKitRemoteInfo: CommunicationUI_Proxy.CallKitRemoteInfoProxy?)
+  @objc public func startExperience(teamsMeeting: CommunicationUI_Proxy.TeamsMeetingObjectProxy, localData: CommunicationUI_Proxy.CommunicationLocalDataOptionProxy?, callKitRemoteInfo: CommunicationUI_Proxy.CallKitRemoteInfoProxy?)
+  @objc public func startExperience(roomsCall: CommunicationUI_Proxy.RoomsCallObjectProxy, localData: CommunicationUI_Proxy.CommunicationLocalDataOptionProxy?, callKitRemoteInfo: CommunicationUI_Proxy.CallKitRemoteInfoProxy?)
+  @objc public func startExperience(participants: Swift.String, localData: CommunicationUI_Proxy.CommunicationLocalDataOptionProxy?, callKitRemoteInfo: CommunicationUI_Proxy.CallKitRemoteInfoProxy?)
+  @objc public func startExperience(callIdAcceptedFromCallKit: Swift.String, localData: CommunicationUI_Proxy.CommunicationLocalDataOptionProxy?)
+  @objc public func registerPushNotifications(deviceRegistrationToken: Foundation.Data)
+  @objc public func unregisterPushNotification()
+  @objc public func handlePushNotification(dictionaryPayload: [Swift.AnyHashable : Any])
+  public static func reportIncomingCall(dictionaryPayload: [Swift.AnyHashable : Any], completionHandler: ((Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)? = nil)
+  @objc public func setRemote(participantDataOption: CommunicationUI_Proxy.CommunicationPersonaDataProxy, rawId: Swift.String, onCompletionCallback: ((Swift.Bool, Foundation.NSError?) -> Swift.Void)?) throws
+  @objc public func getAvailableLanguages() -> [Swift.String]
+  @objc public func dismiss()
+  @objc public func getCallStateCode() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}

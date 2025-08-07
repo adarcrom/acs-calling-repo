@@ -1,0 +1,2353 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name FluentUI
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import Combine
+import CoreGraphics
+@_exported import FluentUI
+import Foundation
+import QuartzCore
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc public protocol MSFActivityIndicatorState {
+  @objc var accessibilityLabel: Swift.String? { get set }
+  @objc var color: UIKit.UIColor? { get set }
+  @objc var isAnimating: Swift.Bool { get set }
+  @objc var hidesWhenStopped: Swift.Bool { get set }
+  @objc var size: FluentUI.MSFActivityIndicatorSize { get set }
+}
+@_Concurrency.MainActor @preconcurrency public struct ActivityIndicator : SwiftUICore.View {
+  public typealias TokenSetKeyType = FluentUI.ActivityIndicatorTokenSet.Tokens
+  @SwiftUICore.ObservedObject @_projectedValueProperty($tokenSet) @_Concurrency.MainActor @preconcurrency public var tokenSet: FluentUI.ActivityIndicatorTokenSet {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  @_Concurrency.MainActor @preconcurrency public var $tokenSet: SwiftUICore.ObservedObject<FluentUI.ActivityIndicatorTokenSet>.Wrapper {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public init(size: FluentUI.MSFActivityIndicatorSize)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s8FluentUI17ActivityIndicatorV4bodyQrvp", 0) __
+  public typealias TokenSetType = FluentUI.ActivityIndicatorTokenSet
+}
+extension FluentUI.ActivityIndicator {
+  @_Concurrency.MainActor @preconcurrency public func accessibilityLabel(_ accessibilityLabel: Swift.String?) -> FluentUI.ActivityIndicator
+  @_Concurrency.MainActor @preconcurrency public func color(_ color: UIKit.UIColor?) -> FluentUI.ActivityIndicator
+  @_Concurrency.MainActor @preconcurrency public func isAnimating(_ isAnimating: Swift.Bool) -> FluentUI.ActivityIndicator
+  @_Concurrency.MainActor @preconcurrency public func hidesWhenStopped(_ hidesWhenStopped: Swift.Bool) -> FluentUI.ActivityIndicator
+}
+@objc public enum MSFActivityIndicatorSize : Swift.Int, Swift.CaseIterable {
+  case xSmall
+  case small
+  case medium
+  case large
+  case xLarge
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.MSFActivityIndicatorSize]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.MSFActivityIndicatorSize] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ActivityIndicatorTokenSet : FluentUI.ControlTokenSet<FluentUI.ActivityIndicatorTokenSet.Tokens> {
+  public enum Tokens : FluentUI.TokenSetKey {
+    case defaultColor
+    case thickness
+    public static func == (a: FluentUI.ActivityIndicatorTokenSet.Tokens, b: FluentUI.ActivityIndicatorTokenSet.Tokens) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.ActivityIndicatorTokenSet.Tokens]
+    nonisolated public static var allCases: [FluentUI.ActivityIndicatorTokenSet.Tokens] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(MSFAliasTokens) final public class AliasTokens : ObjectiveC.NSObject {
+  @objc(MSFBrandColorsAliasTokens) public enum BrandColorsTokens : Swift.Int, FluentUI.TokenSetKey {
+    case primary
+    case shade10
+    case shade20
+    case shade30
+    case tint10
+    case tint20
+    case tint30
+    case tint40
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.AliasTokens.BrandColorsTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.AliasTokens.BrandColorsTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @available(swift, obsoleted: 1.0, message: "This method exists for Objective-C backwards compatibility and should not be invoked from Swift. Please use the `brandColors` property directly.")
+  @objc(brandColorForToken:) final public func brandColor(_ token: FluentUI.AliasTokens.BrandColorsTokens) -> FluentUI.DynamicColor
+  final public var brandColors: FluentUI.TokenSet<FluentUI.AliasTokens.BrandColorsTokens, FluentUI.DynamicColor>
+  @objc(MSFForegroundColorsAliasTokens) public enum ForegroundColorsTokens : Swift.Int, FluentUI.TokenSetKey {
+    case neutral1
+    case neutral2
+    case neutral3
+    case neutral4
+    case neutralDisabled
+    case neutralInverted
+    case brandRest
+    case brandHover
+    case brandPressed
+    case brandSelected
+    case brandDisabled
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.AliasTokens.ForegroundColorsTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.AliasTokens.ForegroundColorsTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @available(swift, obsoleted: 1.0, message: "This method exists for Objective-C backwards compatibility and should not be invoked from Swift. Please use the `foregroundColors` property directly.")
+  @objc(foregroundColorForToken:) final public func foregroundColor(_ token: FluentUI.AliasTokens.ForegroundColorsTokens) -> FluentUI.DynamicColor
+  final public var foregroundColors: FluentUI.TokenSet<FluentUI.AliasTokens.ForegroundColorsTokens, FluentUI.DynamicColor> {
+    get
+    set
+  }
+  @objc(MSFBackgroundColorsAliasTokens) public enum BackgroundColorsTokens : Swift.Int, FluentUI.TokenSetKey {
+    case neutral1
+    case neutral2
+    case neutral3
+    case neutral4
+    case neutral5
+    case neutralDisabled
+    case brandRest
+    case brandHover
+    case brandPressed
+    case brandSelected
+    case brandDisabled
+    case surfaceQuaternary
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.AliasTokens.BackgroundColorsTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.AliasTokens.BackgroundColorsTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @available(swift, obsoleted: 1.0, message: "This method exists for Objective-C backwards compatibility and should not be invoked from Swift. Please use the `backgroundColors` property directly.")
+  @objc(backgroundColorForToken:) final public func backgroundColor(_ token: FluentUI.AliasTokens.BackgroundColorsTokens) -> FluentUI.DynamicColor
+  final public var backgroundColors: FluentUI.TokenSet<FluentUI.AliasTokens.BackgroundColorsTokens, FluentUI.DynamicColor> {
+    get
+    set
+  }
+  @objc(MSFStrokeColorsAliasTokens) public enum StrokeColorsTokens : Swift.Int, FluentUI.TokenSetKey {
+    case neutral1
+    case neutral2
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.AliasTokens.StrokeColorsTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.AliasTokens.StrokeColorsTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @available(swift, obsoleted: 1.0, message: "This method exists for Objective-C backwards compatibility and should not be invoked from Swift. Please use the `strokeColors` property directly.")
+  @objc(strokeColorForToken:) final public func strokeColor(_ token: FluentUI.AliasTokens.StrokeColorsTokens) -> FluentUI.DynamicColor
+  final public var strokeColors: FluentUI.TokenSet<FluentUI.AliasTokens.StrokeColorsTokens, FluentUI.DynamicColor> {
+    get
+    set
+  }
+  @objc(MSFShadowColorsAliasTokens) public enum ShadowColorsTokens : Swift.Int, FluentUI.TokenSetKey {
+    case neutralAmbient
+    case neutralKey
+    case neutralAmbientLighter
+    case neutralKeyLighter
+    case neutralAmbientDarker
+    case neutralKeyDarker
+    case brandAmbient
+    case brandKey
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.AliasTokens.ShadowColorsTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.AliasTokens.ShadowColorsTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @available(swift, obsoleted: 1.0, message: "This method exists for Objective-C backwards compatibility and should not be invoked from Swift. Please use the `shadowColors` property directly.")
+  @objc(shadowColorForToken:) final public func shadowColor(_ token: FluentUI.AliasTokens.ShadowColorsTokens) -> FluentUI.DynamicColor
+  final public var shadowColors: FluentUI.TokenSet<FluentUI.AliasTokens.ShadowColorsTokens, FluentUI.DynamicColor> {
+    get
+    set
+  }
+  @objc(MSFTypographyAliasTokens) public enum TypographyTokens : Swift.Int, FluentUI.TokenSetKey {
+    case display
+    case largeTitle
+    case title1
+    case title2
+    case title3
+    case body1Strong
+    case body1
+    case body2Strong
+    case body2
+    case caption1Strong
+    case caption1
+    case caption2
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.AliasTokens.TypographyTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.AliasTokens.TypographyTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @available(swift, obsoleted: 1.0, message: "This method exists for Objective-C backwards compatibility and should not be invoked from Swift. Please use the `typography` property directly.")
+  @objc(typographyForToken:) final public func typography(_ token: FluentUI.AliasTokens.TypographyTokens) -> FluentUI.FontInfo
+  final public var typography: FluentUI.TokenSet<FluentUI.AliasTokens.TypographyTokens, FluentUI.FontInfo> {
+    get
+    set
+  }
+  @objc(MSFShadowAliasTokens) public enum ShadowTokens : Swift.Int, FluentUI.TokenSetKey {
+    case clear
+    case shadow02
+    case shadow04
+    case shadow08
+    case shadow16
+    case shadow28
+    case shadow64
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.AliasTokens.ShadowTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.AliasTokens.ShadowTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @available(swift, obsoleted: 1.0, message: "This method exists for Objective-C backwards compatibility and should not be invoked from Swift. Please use the `shadow` property directly.")
+  @objc(shadowForToken:) final public func shadow(_ token: FluentUI.AliasTokens.ShadowTokens) -> FluentUI.ShadowInfo
+  final public var shadow: FluentUI.TokenSet<FluentUI.AliasTokens.ShadowTokens, FluentUI.ShadowInfo> {
+    get
+    set
+  }
+  @objc(MSFElevationAliasTokens) public enum ElevationTokens : Swift.Int, FluentUI.TokenSetKey {
+    case interactiveElevation1Rest
+    case interactiveElevation1Hover
+    case interactiveElevation1Pressed
+    case interactiveElevation1Selected
+    case interactiveElevation1Disabled
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.AliasTokens.ElevationTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.AliasTokens.ElevationTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @available(swift, obsoleted: 1.0, message: "This method exists for Objective-C backwards compatibility and should not be invoked from Swift. Please use the `elevation` property directly.")
+  @objc(elevationForToken:) final public func elevation(_ token: FluentUI.AliasTokens.ElevationTokens) -> FluentUI.ShadowInfo
+  final public var elevation: FluentUI.TokenSet<FluentUI.AliasTokens.ElevationTokens, FluentUI.ShadowInfo> {
+    get
+    set
+  }
+  @objc deinit
+}
+@objc public protocol MSFAvatarState {
+  @objc var accessibilityLabel: Swift.String? { get set }
+  @objc var backgroundColor: UIKit.UIColor? { get set }
+  @objc var foregroundColor: UIKit.UIColor? { get set }
+  @objc var hasButtonAccessibilityTrait: Swift.Bool { get set }
+  @objc var hasPointerInteraction: Swift.Bool { get set }
+  @objc var hasRingInnerGap: Swift.Bool { get set }
+  @objc var image: UIKit.UIImage? { get set }
+  @objc var imageBasedRingColor: UIKit.UIImage? { get set }
+  @objc var isAnimated: Swift.Bool { get set }
+  @objc var isOutOfOffice: Swift.Bool { get set }
+  @objc var isRingVisible: Swift.Bool { get set }
+  @objc var isTransparent: Swift.Bool { get set }
+  @objc var presence: FluentUI.MSFAvatarPresence { get set }
+  @objc var primaryText: Swift.String? { get set }
+  @objc var ringColor: UIKit.UIColor? { get set }
+  @objc var secondaryText: Swift.String? { get set }
+  @objc var size: FluentUI.MSFAvatarSize { get set }
+  @objc var style: FluentUI.MSFAvatarStyle { get set }
+}
+@_Concurrency.MainActor @preconcurrency public struct Avatar : SwiftUICore.View {
+  public typealias TokenSetKeyType = FluentUI.AvatarTokenSet.Tokens
+  @SwiftUICore.ObservedObject @_projectedValueProperty($tokenSet) @_Concurrency.MainActor @preconcurrency public var tokenSet: FluentUI.AvatarTokenSet {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  @_Concurrency.MainActor @preconcurrency public var $tokenSet: SwiftUICore.ObservedObject<FluentUI.AvatarTokenSet>.Wrapper {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public init(style: FluentUI.MSFAvatarStyle, size: FluentUI.MSFAvatarSize, image: UIKit.UIImage? = nil, primaryText: Swift.String? = nil, secondaryText: Swift.String? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s8FluentUI6AvatarV4bodyQrvp", 0) __
+  public typealias TokenSetType = FluentUI.AvatarTokenSet
+}
+@objc public protocol MSFAvatarGroupState {
+  @objc var maxDisplayedAvatars: Swift.Int { get set }
+  @objc var overflowCount: Swift.Int { get set }
+  @objc var style: FluentUI.MSFAvatarGroupStyle { get set }
+  @objc var size: FluentUI.MSFAvatarSize { get set }
+  @objc func createAvatar() -> any FluentUI.MSFAvatarGroupAvatarState
+  @objc func createAvatar(at index: Swift.Int) -> any FluentUI.MSFAvatarGroupAvatarState
+  @objc func getAvatarState(at index: Swift.Int) -> any FluentUI.MSFAvatarGroupAvatarState
+  @objc func removeAvatar(at index: Swift.Int)
+}
+@objc public enum MSFAvatarGroupStyle : Swift.Int, Swift.CaseIterable {
+  case stack
+  case pile
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.MSFAvatarGroupStyle]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.MSFAvatarGroupStyle] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol MSFAvatarGroupAvatarState {
+  @objc var accessibilityLabel: Swift.String? { get set }
+  @objc var backgroundColor: UIKit.UIColor? { get set }
+  @objc var foregroundColor: UIKit.UIColor? { get set }
+  @objc var hasRingInnerGap: Swift.Bool { get set }
+  @objc var image: UIKit.UIImage? { get set }
+  @objc var imageBasedRingColor: UIKit.UIImage? { get set }
+  @objc var isRingVisible: Swift.Bool { get set }
+  @objc var isTransparent: Swift.Bool { get set }
+  @objc var primaryText: Swift.String? { get set }
+  @objc var ringColor: UIKit.UIColor? { get set }
+  @objc var secondaryText: Swift.String? { get set }
+}
+@_Concurrency.MainActor @preconcurrency public struct AvatarGroup : SwiftUICore.View {
+  public typealias TokenSetKeyType = FluentUI.AvatarGroupTokenSet.Tokens
+  @SwiftUICore.ObservedObject @_projectedValueProperty($tokenSet) @_Concurrency.MainActor @preconcurrency public var tokenSet: FluentUI.AvatarGroupTokenSet {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  @_Concurrency.MainActor @preconcurrency public var $tokenSet: SwiftUICore.ObservedObject<FluentUI.AvatarGroupTokenSet>.Wrapper {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public init(style: FluentUI.MSFAvatarGroupStyle, size: FluentUI.MSFAvatarSize)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s8FluentUI11AvatarGroupV4bodyQrvp", 0) __
+  public typealias TokenSetType = FluentUI.AvatarGroupTokenSet
+}
+@_hasMissingDesignatedInitializers public class AvatarGroupTokenSet : FluentUI.ControlTokenSet<FluentUI.AvatarGroupTokenSet.Tokens> {
+  public enum Tokens : FluentUI.TokenSetKey {
+    case interspace
+    public static func == (a: FluentUI.AvatarGroupTokenSet.Tokens, b: FluentUI.AvatarGroupTokenSet.Tokens) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.AvatarGroupTokenSet.Tokens]
+    nonisolated public static var allCases: [FluentUI.AvatarGroupTokenSet.Tokens] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+extension FluentUI.Avatar {
+  @_Concurrency.MainActor @preconcurrency public func accessibilityLabel(_ accessibilityLabel: Swift.String?) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func backgroundColor(_ backgroundColor: UIKit.UIColor?) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func foregroundColor(_ foregroundColor: UIKit.UIColor?) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func hasPointerInteraction(_ hasPointerInteraction: Swift.Bool) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func hasRingInnerGap(_ hasRingInnerGap: Swift.Bool) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func imageBasedRingColor(_ imageBasedRingColor: UIKit.UIImage?) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func isAnimated(_ isAnimated: Swift.Bool) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func isOutOfOffice(_ isOutOfOffice: Swift.Bool) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func isRingVisible(_ isRingVisible: Swift.Bool) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func isTransparent(_ isTransparent: Swift.Bool) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func presence(_ presence: FluentUI.MSFAvatarPresence) -> FluentUI.Avatar
+  @_Concurrency.MainActor @preconcurrency public func ringColor(_ ringColor: UIKit.UIColor?) -> FluentUI.Avatar
+}
+@_hasMissingDesignatedInitializers public class AvatarTokenSet : FluentUI.ControlTokenSet<FluentUI.AvatarTokenSet.Tokens> {
+  public enum Tokens : FluentUI.TokenSetKey {
+    case borderRadius
+    case textFont
+    case ringDefaultColor
+    case ringGapColor
+    case ringThickness
+    case ringInnerGap
+    case ringOuterGap
+    case presenceIconOutlineThickness
+    case presenceOutlineColor
+    case backgroundDefaultColor
+    case foregroundDefaultColor
+    public static func == (a: FluentUI.AvatarTokenSet.Tokens, b: FluentUI.AvatarTokenSet.Tokens) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.AvatarTokenSet.Tokens]
+    nonisolated public static var allCases: [FluentUI.AvatarTokenSet.Tokens] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@objc public enum MSFAvatarStyle : Swift.Int, Swift.CaseIterable {
+  case `default`
+  case accent
+  case group
+  case outlined
+  case outlinedPrimary
+  case overflow
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.MSFAvatarStyle]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.MSFAvatarStyle] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum MSFAvatarSize : Swift.Int, Swift.CaseIterable {
+  case size16
+  case size20
+  case size24
+  case size32
+  case size40
+  case size56
+  case size72
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.MSFAvatarSize]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.MSFAvatarSize] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFBlurringView) @_Concurrency.MainActor @preconcurrency open class BlurringView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency public init(style: UIKit.UIBlurEffect.Style, backgroundColor: UIKit.UIColor? = nil)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @objc @_Concurrency.MainActor @preconcurrency public func updateBackground(backgroundColor: UIKit.UIColor?)
+  @objc deinit
+}
+@objc(MSFBottomSheetControllerDelegate) public protocol BottomSheetControllerDelegate {
+  @objc optional func bottomSheetController(_ bottomSheetController: FluentUI.BottomSheetController, didMoveTo expansionState: FluentUI.BottomSheetExpansionState, interaction: FluentUI.BottomSheetInteraction)
+  @objc optional func bottomSheetControllerCollapsedHeightInSafeAreaDidChange(_ bottomSheetController: FluentUI.BottomSheetController)
+}
+@objc public enum BottomSheetInteraction : Swift.Int {
+  case noUserAction
+  case swipe
+  case resizingHandleTap
+  case dimmingViewTap
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum BottomSheetExpansionState : Swift.Int {
+  case expanded
+  case collapsed
+  case hidden
+  case transitioning
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc(MSFBottomSheetController) @_Concurrency.MainActor @preconcurrency public class BottomSheetController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor @preconcurrency public init(headerContentView: UIKit.UIView? = nil, expandedContentView: UIKit.UIView, shouldShowDimmingView: Swift.Bool = true)
+  @objc @_Concurrency.MainActor @preconcurrency final public let headerContentView: UIKit.UIView?
+  @objc @_Concurrency.MainActor @preconcurrency final public let expandedContentView: UIKit.UIView
+  @objc @_Concurrency.MainActor @preconcurrency open var hostedScrollView: UIKit.UIScrollView?
+  @objc @_Concurrency.MainActor @preconcurrency open var isExpandable: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var isHidden: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var isFlexibleHeight: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var headerContentHeight: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var preferredExpandedContentHeight: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var handleExpandCustomAccessibilityLabel: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var handleCollapseCustomAccessibilityLabel: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var isExpanded: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var collapsedHeightResolver: ((FluentUI.ContentHeightResolutionContext) -> CoreFoundation.CGFloat)? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var collapsedContentHeight: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var shouldHideCollapsedContent: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var shouldAlwaysFillWidth: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var allowsSwipeToHide: Swift.Bool
+  @objc @_Concurrency.MainActor @preconcurrency public var collapsedHeightInSafeArea: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency final public let sheetLayoutGuide: UIKit.UILayoutGuide
+  @objc @_Concurrency.MainActor @preconcurrency weak open var delegate: (any FluentUI.BottomSheetControllerDelegate)?
+  @objc @_Concurrency.MainActor @preconcurrency public static var resizingHandleHeight: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public func setIsExpanded(_ isExpanded: Swift.Bool, animated: Swift.Bool = true, completion: ((_ isFinished: Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor @preconcurrency public func setIsHidden(_ isHidden: Swift.Bool, animated: Swift.Bool = true, completion: ((_ isFinished: Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor @preconcurrency public func prepareInteractiveIsHiddenChange(_ isHidden: Swift.Bool, completion: ((_ finalPosition: UIKit.UIViewAnimatingPosition) -> Swift.Void)? = nil) -> UIKit.UIViewPropertyAnimator?
+  @objc @_Concurrency.MainActor @preconcurrency public func invalidateSheetSize()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func loadView()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewSafeAreaInsetsDidChange()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @objc deinit
+}
+extension FluentUI.BottomSheetController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers @IBDesignable @objc(MSFButton) @_Concurrency.MainActor @preconcurrency open class Button : UIKit.UIButton {
+  @objc @_Concurrency.MainActor @preconcurrency open var style: FluentUI.ButtonStyle {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var image: UIKit.UIImage? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency open var edgeInsets: UIKit.NSDirectionalEdgeInsets {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency open func initialize()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func didUpdateFocus(in context: UIKit.UIFocusUpdateContext, with coordinator: UIKit.UIFocusAnimationCoordinator)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func didMoveToWindow()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func imageRect(forContentRect contentRect: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @objc @_Concurrency.MainActor @preconcurrency public init(style: FluentUI.ButtonStyle = .secondaryOutline)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  public typealias TokenSetKeyType = FluentUI.ButtonTokenSet.Tokens
+  @_Concurrency.MainActor @preconcurrency public var tokenSet: FluentUI.ButtonTokenSet {
+    get
+    set
+  }
+  public typealias TokenSetType = FluentUI.ButtonTokenSet
+  @objc deinit
+}
+public struct ButtonDynamicColors : Swift.Equatable {
+  public init(rest: FluentUI.DynamicColor, hover: FluentUI.DynamicColor, pressed: FluentUI.DynamicColor, selected: FluentUI.DynamicColor, disabled: FluentUI.DynamicColor)
+  public let rest: FluentUI.DynamicColor
+  public let hover: FluentUI.DynamicColor
+  public let pressed: FluentUI.DynamicColor
+  public let selected: FluentUI.DynamicColor
+  public let disabled: FluentUI.DynamicColor
+  public static func == (a: FluentUI.ButtonDynamicColors, b: FluentUI.ButtonDynamicColors) -> Swift.Bool
+}
+@objc(MSFButtonStyle) public enum ButtonStyle : Swift.Int, Swift.CaseIterable {
+  case primaryFilled
+  case primaryOutline
+  case dangerFilled
+  case dangerOutline
+  case secondaryOutline
+  case tertiaryOutline
+  case borderless
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.ButtonStyle]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.ButtonStyle] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ButtonTokenSet : FluentUI.ControlTokenSet<FluentUI.ButtonTokenSet.Tokens> {
+  public enum Tokens : FluentUI.TokenSetKey {
+    case backgroundColor
+    case backgroundDisabledColor
+    case backgroundPressedColor
+    case borderColor
+    case borderDisabledColor
+    case borderPressedColor
+    case borderWidth
+    case cornerRadius
+    case foregroundColor
+    case foregroundDisabledColor
+    case foregroundPressedColor
+    case titleFont
+    public static func == (a: FluentUI.ButtonTokenSet.Tokens, b: FluentUI.ButtonTokenSet.Tokens) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.ButtonTokenSet.Tokens]
+    nonisolated public static var allCases: [FluentUI.ButtonTokenSet.Tokens] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@objc(MSFColorProviding) public protocol ColorProviding {
+  @objc func primaryColor(for window: UIKit.UIWindow) -> UIKit.UIColor?
+  @objc func primaryTint10Color(for window: UIKit.UIWindow) -> UIKit.UIColor?
+  @objc func primaryTint20Color(for window: UIKit.UIWindow) -> UIKit.UIColor?
+  @objc func primaryTint30Color(for window: UIKit.UIWindow) -> UIKit.UIColor?
+  @objc func primaryTint40Color(for window: UIKit.UIWindow) -> UIKit.UIColor?
+  @objc func primaryShade10Color(for window: UIKit.UIWindow) -> UIKit.UIColor?
+  @objc func primaryShade20Color(for window: UIKit.UIWindow) -> UIKit.UIColor?
+  @objc func primaryShade30Color(for window: UIKit.UIWindow) -> UIKit.UIColor?
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(MSFColors) final public class Colors : ObjectiveC.NSObject {
+  @objc(MSFColorPalette) public enum Palette : Swift.Int {
+    case anchorShade30
+    case anchorTint40
+    case beigeShade30
+    case beigeTint40
+    case blueShade30
+    case blueTint40
+    case brassShade30
+    case brassTint40
+    case brownShade30
+    case brownTint40
+    case cornFlowerShade30
+    case cornFlowerTint40
+    case cranberryShade30
+    case cranberryTint40
+    case darkGreenShade30
+    case darkGreenTint40
+    case darkRedShade30
+    case darkRedTint40
+    case forestShade30
+    case forestTint40
+    case goldShade30
+    case goldTint40
+    case grapeShade30
+    case grapeTint40
+    case lavenderShade30
+    case lavenderTint40
+    case lightTealShade30
+    case lightTealTint40
+    case lilacShade30
+    case lilacTint40
+    case magentaShade30
+    case magentaTint40
+    case marigoldShade30
+    case marigoldTint40
+    case minkShade30
+    case minkTint40
+    case navyShade30
+    case navyTint40
+    case peachShade30
+    case peachTint40
+    case pinkShade30
+    case pinkTint40
+    case platinumShade30
+    case platinumTint40
+    case plumShade30
+    case plumTint40
+    case pumpkinShade30
+    case pumpkinTint40
+    case purpleShade30
+    case purpleTint40
+    case redShade30
+    case redTint40
+    case royalBlueShade30
+    case royalBlueTint40
+    case seafoamShade30
+    case seafoamTint40
+    case steelShade30
+    case steelTint40
+    case tealShade30
+    case tealTint40
+    case pinkRed10
+    case red20
+    case red10
+    case orange30
+    case orange20
+    case orangeYellow20
+    case green20
+    case green10
+    case cyan30
+    case cyan20
+    case cyanBlue20
+    case cyanBlue10
+    case blue10
+    case blueMagenta30
+    case blueMagenta20
+    case magenta20
+    case magenta10
+    case magentaPink10
+    case gray40
+    case gray30
+    case gray20
+    case gray25
+    case gray50
+    case gray100
+    case gray200
+    case gray300
+    case gray400
+    case gray500
+    case gray600
+    case gray700
+    case gray800
+    case gray900
+    case gray950
+    case communicationBlue
+    case communicationBlueTint40
+    case communicationBlueTint30
+    case communicationBlueTint20
+    case communicationBlueTint10
+    case communicationBlueShade30
+    case communicationBlueShade20
+    case communicationBlueShade10
+    case dangerPrimary
+    case dangerTint40
+    case dangerTint30
+    case dangerTint20
+    case dangerTint10
+    case dangerShade30
+    case dangerShade20
+    case dangerShade10
+    case warningPrimary
+    case warningTint40
+    case warningTint30
+    case warningTint20
+    case warningTint10
+    case warningShade30
+    case warningShade20
+    case warningShade10
+    case successPrimary
+    case successTint40
+    case successTint30
+    case successTint20
+    case successTint10
+    case successShade30
+    case successShade20
+    case successShade10
+    case presenceAvailable
+    case presenceAway
+    case presenceBlocked
+    case presenceBusy
+    case presenceDnd
+    case presenceOffline
+    case presenceOof
+    case presenceUnknown
+    public var color: UIKit.UIColor {
+      get
+    }
+    public var name: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public static func setProvider(provider: any FluentUI.ColorProviding, for window: UIKit.UIWindow)
+  @objc public static func removeProvider(for window: UIKit.UIWindow)
+  @objc public static func primary(for window: UIKit.UIWindow) -> UIKit.UIColor
+  @objc public static func primaryTint10(for window: UIKit.UIWindow) -> UIKit.UIColor
+  @objc public static func primaryTint20(for window: UIKit.UIWindow) -> UIKit.UIColor
+  @objc public static func primaryTint30(for window: UIKit.UIWindow) -> UIKit.UIColor
+  @objc public static func primaryTint40(for window: UIKit.UIWindow) -> UIKit.UIColor
+  @objc public static func primaryShade10(for window: UIKit.UIWindow) -> UIKit.UIColor
+  @objc public static func primaryShade20(for window: UIKit.UIWindow) -> UIKit.UIColor
+  @objc public static func primaryShade30(for window: UIKit.UIWindow) -> UIKit.UIColor
+  @available(*, deprecated, renamed: "setProvider(_:forWindow:)")
+  @objc public static var primary: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, renamed: "setProvider(_:forWindow:)")
+  @objc public static var primaryTint10: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, renamed: "setProvider(_:forWindow:)")
+  @objc public static var primaryTint20: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, renamed: "setProvider(_:forWindow:)")
+  @objc public static var primaryTint30: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, renamed: "setProvider(_:forWindow:)")
+  @objc public static var primaryTint40: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, renamed: "setProvider(_:forWindow:)")
+  @objc public static var primaryShade10: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, renamed: "setProvider(_:forWindow:)")
+  @objc public static var primaryShade20: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, renamed: "setProvider(_:forWindow:)")
+  @objc public static var primaryShade30: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, renamed: "textOnAccent")
+  @objc public static var foregroundOnPrimary: UIKit.UIColor
+  @objc public static let gray950: UIKit.UIColor
+  @objc public static let gray900: UIKit.UIColor
+  @objc public static let gray800: UIKit.UIColor
+  @objc public static let gray700: UIKit.UIColor
+  @objc public static let gray600: UIKit.UIColor
+  @objc public static let gray500: UIKit.UIColor
+  @objc public static let gray400: UIKit.UIColor
+  @objc public static let gray300: UIKit.UIColor
+  @objc public static let gray200: UIKit.UIColor
+  @objc public static let gray100: UIKit.UIColor
+  @objc public static let gray50: UIKit.UIColor
+  @objc public static let gray25: UIKit.UIColor
+  @objc public static let error: UIKit.UIColor
+  @objc public static let warning: UIKit.UIColor
+  @objc public static let communicationBlue: UIKit.UIColor
+  @available(*, deprecated, renamed: "textDisabled")
+  @objc public static let disabled: UIKit.UIColor
+  @objc public static let textDominant: UIKit.UIColor
+  @objc public static var textPrimary: UIKit.UIColor
+  @objc public static let textSecondary: UIKit.UIColor
+  @objc public static let textDisabled: UIKit.UIColor
+  @objc public static let textOnAccent: UIKit.UIColor
+  @objc public static let iconPrimary: UIKit.UIColor
+  @objc public static let iconSecondary: UIKit.UIColor
+  @objc public static let iconDisabled: UIKit.UIColor
+  @objc public static let iconOnAccent: UIKit.UIColor
+  @objc public static var surfacePrimary: UIKit.UIColor
+  @objc public static let surfaceSecondary: UIKit.UIColor
+  @objc public static let surfaceTertiary: UIKit.UIColor
+  @objc public static let surfaceQuaternary: UIKit.UIColor
+  @objc public static let dividerOnPrimary: UIKit.UIColor
+  @objc public static let dividerOnSecondary: UIKit.UIColor
+  @objc public static let dividerOnTertiary: UIKit.UIColor
+  @objc(colorFromPalette:) public static func color(from palette: FluentUI.Colors.Palette) -> UIKit.UIColor
+  @objc deinit
+}
+extension FluentUI.Colors.Palette : Swift.CaseIterable {
+  public typealias AllCases = [FluentUI.Colors.Palette]
+  nonisolated public static var allCases: [FluentUI.Colors.Palette] {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc(MSFContentHeightResolutionContext) public class ContentHeightResolutionContext : ObjectiveC.NSObject {
+  @objc final public let maximumHeight: CoreFoundation.CGFloat
+  @objc final public let containerTraitCollection: UIKit.UITraitCollection
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class ControlHostingView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ControlTokenSet<T> : Foundation.ObservableObject where T : Swift.CaseIterable, T : Swift.Hashable {
+  public subscript(token: T) -> FluentUI.ControlTokenValue {
+    get
+    set(value)
+  }
+  public func removeOverride(_ token: T)
+  public func replaceAllOverrides(with overrideTokens: [T : FluentUI.ControlTokenValue]?)
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public enum ControlTokenValue {
+  case float(() -> CoreFoundation.CGFloat)
+  case dynamicColor(() -> FluentUI.DynamicColor)
+  case fontInfo(() -> FluentUI.FontInfo)
+  case shadowInfo(() -> FluentUI.ShadowInfo)
+  public var float: CoreFoundation.CGFloat {
+    get
+  }
+  public var dynamicColor: FluentUI.DynamicColor {
+    get
+  }
+  public var fontInfo: FluentUI.FontInfo {
+    get
+  }
+  public var shadowInfo: FluentUI.ShadowInfo {
+    get
+  }
+}
+@objc(MSFDimmingViewType) public enum DimmingViewType : Swift.Int {
+  case white = 1
+  case black
+  case none
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFDimmingView) @_Concurrency.MainActor @preconcurrency open class DimmingView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var dimmedBlackColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var dimmedWhiteColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var dimmedClearColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public init(type: FluentUI.DimmingViewType)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc(MSFDrawerResizingBehavior) public enum DrawerResizingBehavior : Swift.Int {
+  case none
+  case dismiss
+  case expand
+  case dismissOrExpand
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFDrawerPresentationDirection) public enum DrawerPresentationDirection : Swift.Int {
+  case down
+  case up
+  case fromLeading
+  case fromTrailing
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFDrawerPresentationStyle) public enum DrawerPresentationStyle : Swift.Int {
+  case automatic = -1
+  case slideover
+  case popover
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFDrawerPresentationBackground) public enum DrawerPresentationBackground : Swift.Int {
+  case none
+  case black
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension FluentUI.Colors {
+  public struct Drawer {
+    public static var background: UIKit.UIColor
+    public static var popoverBackground: UIKit.UIColor
+  }
+  @objc public static var drawerBackground: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var popoverBackground: UIKit.UIColor {
+    @objc get
+  }
+}
+@objc(MSFDrawerControllerDelegate) public protocol DrawerControllerDelegate {
+  @objc optional func drawerControllerDidChangeExpandedState(_ controller: FluentUI.DrawerController)
+  @objc optional func drawerControllerWillDismiss(_ controller: FluentUI.DrawerController)
+  @objc optional func drawerControllerDidDismiss(_ controller: FluentUI.DrawerController)
+  @objc optional func drawerControllerShouldDismissDrawer(_ controller: FluentUI.DrawerController) -> Swift.Bool
+}
+@objc(MSFDrawerController) @_Concurrency.MainActor @preconcurrency open class DrawerController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor @preconcurrency open var backgroundColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var contentController: UIKit.UIViewController? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var contentView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var contentScrollView: UIKit.UIScrollView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var presentationStyle: FluentUI.DrawerPresentationStyle
+  @objc @_Concurrency.MainActor @preconcurrency open var presentationOffset: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var presentationBackground: FluentUI.DrawerPresentationBackground
+  @available(*, deprecated, message: "Use BottomSheetController for better accessibility support")
+  @objc @_Concurrency.MainActor @preconcurrency weak open var passThroughView: UIKit.UIView?
+  @objc @_Concurrency.MainActor @preconcurrency open var presentingGesture: UIKit.UIPanGestureRecognizer? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var resizingBehavior: FluentUI.DrawerResizingBehavior {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var resizingHandleViewBackgroundColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var isExpanded: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var adjustsHeightForKeyboard: Swift.Bool
+  @objc @_Concurrency.MainActor @preconcurrency open var permittedArrowDirections: UIKit.UIPopoverArrowDirection
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredContentSize: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var shouldUseWindowFullWidthInLandscape: Swift.Bool
+  @objc @_Concurrency.MainActor @preconcurrency open var shouldRespectSafeAreaForWindowFullWidth: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency open var preferredContentWidth: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency open var preferredContentHeight: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var onDismiss: (() -> Swift.Void)?
+  @objc @_Concurrency.MainActor @preconcurrency open var onDismissCompleted: (() -> Swift.Void)?
+  @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any FluentUI.DrawerControllerDelegate)?
+  @objc @_Concurrency.MainActor @preconcurrency public init(sourceView: UIKit.UIView, sourceRect: CoreFoundation.CGRect, presentationOrigin: CoreFoundation.CGFloat = -1, presentationDirection: FluentUI.DrawerPresentationDirection, preferredMaximumHeight: CoreFoundation.CGFloat = -1)
+  @objc @_Concurrency.MainActor @preconcurrency public init(barButtonItem: UIKit.UIBarButtonItem, presentationOrigin: CoreFoundation.CGFloat = -1, presentationDirection: FluentUI.DrawerPresentationDirection, preferredMaximumHeight: CoreFoundation.CGFloat = -1)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency open func initialize()
+  @_Concurrency.MainActor @preconcurrency open func willDismiss()
+  @_Concurrency.MainActor @preconcurrency open func didDismiss()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func preferredContentSizeDidChange(forChildContentContainer container: any UIKit.UIContentContainer)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func accessibilityPerformEscape() -> Swift.Bool
+  @objc deinit
+}
+extension FluentUI.DrawerController : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func interactionControllerForPresentation(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+}
+extension FluentUI.DrawerController : UIKit.UIPopoverPresentationControllerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func adaptivePresentationStyle(for controller: UIKit.UIPresentationController, traitCollection: UIKit.UITraitCollection) -> UIKit.UIModalPresentationStyle
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func presentationControllerShouldDismiss(_ presentationController: UIKit.UIPresentationController) -> Swift.Bool
+}
+extension FluentUI.DrawerController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+@objc(MSFColorValue) public class ColorValue : ObjectiveC.NSObject {
+  public static let clear: FluentUI.ColorValue
+  @objc public init(_ hexValue: Swift.UInt32)
+  @objc public init(r: CoreFoundation.CGFloat, g: CoreFoundation.CGFloat, b: CoreFoundation.CGFloat, a: CoreFoundation.CGFloat)
+  @objc deinit
+}
+@objc(MSFDynamicColor) public class DynamicColor : ObjectiveC.NSObject {
+  @objc public init(light: FluentUI.ColorValue, lightHighContrast: FluentUI.ColorValue? = nil, lightElevated: FluentUI.ColorValue? = nil, lightElevatedHighContrast: FluentUI.ColorValue? = nil, dark: FluentUI.ColorValue? = nil, darkHighContrast: FluentUI.ColorValue? = nil, darkElevated: FluentUI.ColorValue? = nil, darkElevatedHighContrast: FluentUI.ColorValue? = nil)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(MSFFluentTheme) public class FluentTheme : ObjectiveC.NSObject, Foundation.ObservableObject {
+  @objc override dynamic public init()
+  public func register<T>(tokenSetType: FluentUI.ControlTokenSet<T>.Type, tokenSet: [T : FluentUI.ControlTokenValue]?) where T : Swift.CaseIterable, T : Swift.Hashable
+  public func tokens<T>(for tokenSetType: FluentUI.ControlTokenSet<T>.Type) -> [T : FluentUI.ControlTokenValue]? where T : Swift.CaseIterable, T : Swift.Hashable
+  @objc final public let aliasTokens: FluentUI.AliasTokens
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public protocol FluentThemeable {
+  var fluentTheme: FluentUI.FluentTheme { get set }
+}
+extension Foundation.NSNotification.Name {
+  public static let didChangeTheme: Foundation.Notification.Name
+}
+@objc extension UIKit.UIView : FluentUI.FluentThemeable {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var fluentTheme: FluentUI.FluentTheme {
+    @objc get
+    @objc set
+  }
+}
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func fluentTheme(_ fluentTheme: FluentUI.FluentTheme) -> some SwiftUICore.View
+  
+}
+extension FluentUI.Colors {
+  @objc public static var navigationBarBackground: UIKit.UIColor {
+    @objc get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class FluentUIFramework : ObjectiveC.NSObject {
+  @objc public static let resourceBundle: Foundation.Bundle
+  @objc public static let colorsBundle: Foundation.Bundle
+  @available(*, deprecated, message: "Non-fluent icons no longer supported. Setting this var no longer has any effect and it will be removed in a future update.")
+  @objc public static var usesFluentIcons: Swift.Bool
+  @available(*, deprecated, renamed: "initializeAppearance(with:whenContainedInInstancesOf:)")
+  @objc public static func initializeAppearance()
+  @objc public static func initializeAppearance(with primaryColor: UIKit.UIColor, whenContainedInInstancesOf containerTypes: [any UIKit.UIAppearanceContainer.Type]? = nil)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(MSFFontInfo) public class FontInfo : ObjectiveC.NSObject {
+  public init(name: Swift.String? = nil, size: CoreFoundation.CGFloat, weight: SwiftUICore.Font.Weight = .regular)
+  final public let name: Swift.String?
+  final public let size: CoreFoundation.CGFloat
+  final public let weight: SwiftUICore.Font.Weight
+  @objc deinit
+}
+extension SwiftUICore.Font {
+  public static func fluent(_ fontInfo: FluentUI.FontInfo, shouldScale: Swift.Bool = true) -> SwiftUICore.Font
+}
+extension UIKit.UIFont {
+  @objc public static func fluent(_ fontInfo: FluentUI.FontInfo, shouldScale: Swift.Bool = true) -> UIKit.UIFont
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(MSFFonts) final public class Fonts : ObjectiveC.NSObject {
+  @objc public static var largeTitle: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var title1: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var title2: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var headline: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var body: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var subhead: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var footnote: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var button1: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var button2: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var caption1: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var caption2: UIKit.UIFont {
+    @objc get
+  }
+  @objc deinit
+}
+@objc(MSFTextStyle) public enum TextStyle : Swift.Int, Swift.CaseIterable {
+  case largeTitle
+  case title1
+  case title2
+  case headline
+  case body
+  case subhead
+  case footnote
+  case button1
+  case button2
+  case caption1
+  case caption2
+  public var font: UIKit.UIFont {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.TextStyle]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.TextStyle] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(MSFGlobalTokens) public class GlobalTokens : ObjectiveC.NSObject {
+  @objc(MSFNeutralColorsToken) public enum NeutralColorsToken : Swift.Int, FluentUI.TokenSetKey {
+    case black
+    case grey2
+    case grey4
+    case grey6
+    case grey8
+    case grey10
+    case grey12
+    case grey14
+    case grey16
+    case grey18
+    case grey20
+    case grey22
+    case grey24
+    case grey26
+    case grey28
+    case grey30
+    case grey32
+    case grey34
+    case grey36
+    case grey38
+    case grey40
+    case grey42
+    case grey44
+    case grey46
+    case grey48
+    case grey50
+    case grey52
+    case grey54
+    case grey56
+    case grey58
+    case grey60
+    case grey62
+    case grey64
+    case grey66
+    case grey68
+    case grey70
+    case grey72
+    case grey74
+    case grey76
+    case grey78
+    case grey80
+    case grey82
+    case grey84
+    case grey86
+    case grey88
+    case grey90
+    case grey92
+    case grey94
+    case grey96
+    case grey98
+    case white
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.GlobalTokens.NeutralColorsToken]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.NeutralColorsToken] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(neutralColorForToken:) public static func neutralColors(_ token: FluentUI.GlobalTokens.NeutralColorsToken) -> FluentUI.ColorValue
+  @objc(MSFSharedColorSets) public enum SharedColorSets : Swift.Int, FluentUI.TokenSetKey {
+    case darkRed
+    case burgundy
+    case cranberry
+    case red
+    case darkOrange
+    case bronze
+    case pumpkin
+    case orange
+    case peach
+    case marigold
+    case yellow
+    case gold
+    case brass
+    case brown
+    case darkBrown
+    case lime
+    case forest
+    case seafoam
+    case lightGreen
+    case green
+    case darkGreen
+    case lightTeal
+    case teal
+    case darkTeal
+    case cyan
+    case steel
+    case lightBlue
+    case blue
+    case royalBlue
+    case darkBlue
+    case cornflower
+    case navy
+    case lavender
+    case purple
+    case darkPurple
+    case orchid
+    case grape
+    case berry
+    case lilac
+    case pink
+    case hotPink
+    case magenta
+    case plum
+    case beige
+    case mink
+    case silver
+    case platinum
+    case anchor
+    case charcoal
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.GlobalTokens.SharedColorSets]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.SharedColorSets] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(MSFSharedColorsTokens) public enum SharedColorsTokens : Swift.Int, FluentUI.TokenSetKey {
+    case shade50
+    case shade40
+    case shade30
+    case shade20
+    case shade10
+    case primary
+    case tint10
+    case tint20
+    case tint30
+    case tint40
+    case tint50
+    case tint60
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [FluentUI.GlobalTokens.SharedColorsTokens]
+    public typealias RawValue = Swift.Int
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.SharedColorsTokens] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(sharedColorForColorSet:token:) public static func sharedColors(_ sharedColor: FluentUI.GlobalTokens.SharedColorSets, _ token: FluentUI.GlobalTokens.SharedColorsTokens) -> FluentUI.ColorValue
+  public enum FontSizeToken : FluentUI.TokenSetKey {
+    case size100
+    case size200
+    case size300
+    case size400
+    case size500
+    case size600
+    case size700
+    case size800
+    case size900
+    public static func == (a: FluentUI.GlobalTokens.FontSizeToken, b: FluentUI.GlobalTokens.FontSizeToken) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.GlobalTokens.FontSizeToken]
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.FontSizeToken] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func fontSize(_ token: FluentUI.GlobalTokens.FontSizeToken) -> CoreFoundation.CGFloat
+  public enum FontWeightToken : FluentUI.TokenSetKey {
+    case regular
+    case medium
+    case semibold
+    case bold
+    public static func == (a: FluentUI.GlobalTokens.FontWeightToken, b: FluentUI.GlobalTokens.FontWeightToken) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.GlobalTokens.FontWeightToken]
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.FontWeightToken] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func fontWeight(_ token: FluentUI.GlobalTokens.FontWeightToken) -> SwiftUICore.Font.Weight
+  public enum IconSizeToken : FluentUI.TokenSetKey {
+    case xxxSmall
+    case xxSmall
+    case xSmall
+    case small
+    case medium
+    case large
+    case xLarge
+    case xxLarge
+    case xxxLarge
+    public static func == (a: FluentUI.GlobalTokens.IconSizeToken, b: FluentUI.GlobalTokens.IconSizeToken) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.GlobalTokens.IconSizeToken]
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.IconSizeToken] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func iconSize(_ token: FluentUI.GlobalTokens.IconSizeToken) -> CoreFoundation.CGFloat
+  public enum SpacingToken : FluentUI.TokenSetKey {
+    case none
+    case xxxSmall
+    case xxSmall
+    case xSmall
+    case small
+    case medium
+    case large
+    case xLarge
+    case xxLarge
+    case xxxLarge
+    case xxxxLarge
+    public static func == (a: FluentUI.GlobalTokens.SpacingToken, b: FluentUI.GlobalTokens.SpacingToken) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.GlobalTokens.SpacingToken]
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.SpacingToken] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func spacing(_ token: FluentUI.GlobalTokens.SpacingToken) -> CoreFoundation.CGFloat
+  public enum BorderRadiusToken : FluentUI.TokenSetKey {
+    case none
+    case small
+    case medium
+    case large
+    case xLarge
+    case circle
+    public static func == (a: FluentUI.GlobalTokens.BorderRadiusToken, b: FluentUI.GlobalTokens.BorderRadiusToken) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.GlobalTokens.BorderRadiusToken]
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.BorderRadiusToken] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func borderRadius(_ token: FluentUI.GlobalTokens.BorderRadiusToken) -> CoreFoundation.CGFloat
+  public enum BorderSizeToken : FluentUI.TokenSetKey {
+    case none
+    case thin
+    case thick
+    case thicker
+    case thickest
+    public static func == (a: FluentUI.GlobalTokens.BorderSizeToken, b: FluentUI.GlobalTokens.BorderSizeToken) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.GlobalTokens.BorderSizeToken]
+    nonisolated public static var allCases: [FluentUI.GlobalTokens.BorderSizeToken] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func borderSize(_ token: FluentUI.GlobalTokens.BorderSizeToken) -> CoreFoundation.CGFloat
+  @objc deinit
+}
+@objc(MSFTextColorStyle) public enum TextColorStyle : Swift.Int, Swift.CaseIterable {
+  case regular
+  case secondary
+  case white
+  case primary
+  case error
+  case warning
+  case disabled
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.TextColorStyle]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.TextColorStyle] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFLabel) @_Concurrency.MainActor @preconcurrency open class Label : UIKit.UILabel {
+  @objc @_Concurrency.MainActor @preconcurrency open var colorStyle: FluentUI.TextColorStyle {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var style: FluentUI.TextStyle {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var maxFontSize: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var textColor: UIKit.UIColor! {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public init(style: FluentUI.TextStyle = .body, colorStyle: FluentUI.TextColorStyle = .regular)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func didMoveToWindow()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var attributedText: Foundation.NSAttributedString? {
+    @objc get
+    @objc set
+  }
+  @objc deinit
+}
+@objc public class LinearGradientInfo : ObjectiveC.NSObject {
+  public init(colors: [FluentUI.DynamicColor], locations: [CoreFoundation.CGFloat]? = nil, startPoint: CoreFoundation.CGPoint, endPoint: CoreFoundation.CGPoint)
+  final public let colors: [FluentUI.DynamicColor]
+  final public let locations: [CoreFoundation.CGFloat]?
+  final public let startPoint: CoreFoundation.CGPoint
+  final public let endPoint: CoreFoundation.CGPoint
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency open class MSFActivityIndicator : FluentUI.ControlHostingView {
+  @objc @_Concurrency.MainActor @preconcurrency public init(size: FluentUI.MSFActivityIndicatorSize = .medium)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor @preconcurrency final public let state: any FluentUI.MSFActivityIndicatorState
+  @_Concurrency.MainActor @preconcurrency final public let tokenSet: FluentUI.ActivityIndicatorTokenSet
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency open class MSFAvatar : FluentUI.ControlHostingView {
+  @objc @_Concurrency.MainActor @preconcurrency public init(style: FluentUI.MSFAvatarStyle = .default, size: FluentUI.MSFAvatarSize = .size40)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor @preconcurrency final public let state: any FluentUI.MSFAvatarState
+  @_Concurrency.MainActor @preconcurrency final public let tokenSet: FluentUI.AvatarTokenSet
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency open class MSFAvatarGroup : FluentUI.ControlHostingView {
+  @objc @_Concurrency.MainActor @preconcurrency public init(style: FluentUI.MSFAvatarGroupStyle, size: FluentUI.MSFAvatarSize)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor @preconcurrency final public let state: any FluentUI.MSFAvatarGroupState
+  @_Concurrency.MainActor @preconcurrency final public let tokenSet: FluentUI.AvatarGroupTokenSet
+  @objc deinit
+}
+@objc public enum MSFAvatarPresence : Swift.Int, Swift.CaseIterable {
+  case none
+  case available
+  case away
+  case blocked
+  case busy
+  case doNotDisturb
+  case offline
+  case unknown
+  public func string() -> Swift.String?
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.MSFAvatarPresence]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.MSFAvatarPresence] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFObscureStyle) public enum ObscureStyle : Swift.Int {
+  case blur
+  case dim
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFPersona) public protocol Persona {
+  @objc var image: UIKit.UIImage? { get }
+  @objc var color: UIKit.UIColor? { get }
+  @objc var imageBasedRingColor: UIKit.UIImage? { get }
+  @objc var email: Swift.String { get }
+  @objc var hasRingInnerGap: Swift.Bool { get }
+  @objc var name: Swift.String { get }
+  @objc var presence: FluentUI.MSFAvatarPresence { get }
+  @objc var isOutOfOffice: Swift.Bool { get set }
+  @objc var isRingVisible: Swift.Bool { get }
+  @objc var subtitle: Swift.String { get }
+  @objc optional func fetchImage(completion: @escaping (UIKit.UIImage?) -> Swift.Void)
+}
+@objc(MSFPersonaData) open class PersonaData : ObjectiveC.NSObject, FluentUI.Persona {
+  @objc public var image: UIKit.UIImage?
+  @objc public var email: Swift.String
+  @objc public var imageBasedRingColor: UIKit.UIImage?
+  @objc public var hasRingInnerGap: Swift.Bool
+  @objc public var isRingVisible: Swift.Bool
+  @objc public var isOutOfOffice: Swift.Bool
+  @objc public var color: UIKit.UIColor?
+  @objc public var name: Swift.String
+  @objc public var subtitle: Swift.String
+  public var composedName: (Swift.String, Swift.String)?
+  @objc public var presence: FluentUI.MSFAvatarPresence
+  @objc public init(name: Swift.String = "", email: Swift.String = "", subtitle: Swift.String = "", image: UIKit.UIImage? = nil, presence: FluentUI.MSFAvatarPresence = .none, color: UIKit.UIColor? = nil)
+  @objc public init(name: Swift.String = "", email: Swift.String = "", subtitle: Swift.String = "", image: UIKit.UIImage? = nil, presence: FluentUI.MSFAvatarPresence = .none, color: UIKit.UIColor? = nil, isRingVisible: Swift.Bool = false)
+  @objc public init(firstName: Swift.String = "", lastName: Swift.String = "", email: Swift.String = "", subtitle: Swift.String = "", image: UIKit.UIImage? = nil, presence: FluentUI.MSFAvatarPresence = .none, color: UIKit.UIColor? = nil)
+  @objc deinit
+}
+extension FluentUI.Colors {
+  public struct PopupMenu {
+    public static var description: UIKit.UIColor
+  }
+}
+@_inheritsConvenienceInitializers @objc(MSFPopupMenuController) @_Concurrency.MainActor @preconcurrency open class PopupMenuController : FluentUI.DrawerController {
+  @_Concurrency.MainActor @preconcurrency @objc override open var contentView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override open var presentationStyle: FluentUI.DrawerPresentationStyle {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override open var resizingBehavior: FluentUI.DrawerResizingBehavior {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredContentSize: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency override open var preferredContentWidth: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency override open var preferredContentHeight: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override open var backgroundColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var headerItem: FluentUI.PopupMenuItem? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var selectedItemIndexPath: Foundation.IndexPath? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var separatorColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public func addItems(_ items: [any FluentUI.PopupMenuTemplateItem])
+  @objc @_Concurrency.MainActor @preconcurrency public func addSection(_ section: FluentUI.PopupMenuSection)
+  @objc @_Concurrency.MainActor @preconcurrency public func addSections(_ sections: [FluentUI.PopupMenuSection])
+  @_Concurrency.MainActor @preconcurrency override open func initialize()
+  @_Concurrency.MainActor @preconcurrency override open func didDismiss()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override public init(sourceView: UIKit.UIView, sourceRect: CoreFoundation.CGRect, presentationOrigin: CoreFoundation.CGFloat = super, presentationDirection: FluentUI.DrawerPresentationDirection, preferredMaximumHeight: CoreFoundation.CGFloat = super)
+  @_Concurrency.MainActor @preconcurrency @objc override public init(barButtonItem: UIKit.UIBarButtonItem, presentationOrigin: CoreFoundation.CGFloat = super, presentationDirection: FluentUI.DrawerPresentationDirection, preferredMaximumHeight: CoreFoundation.CGFloat = super)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension FluentUI.PopupMenuController : UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+}
+extension FluentUI.PopupMenuController : UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForFooterInSection section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForFooterInSection section: Swift.Int) -> UIKit.UIView?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+@objc(MSFPopupMenuItem) open class PopupMenuItem : ObjectiveC.NSObject, FluentUI.PopupMenuTemplateItem {
+  @objc public var cellClass: any FluentUI.PopupMenuItemTemplateCell.Type
+  @objc final public let image: UIKit.UIImage?
+  @objc final public let selectedImage: UIKit.UIImage?
+  @objc final public let accessoryImage: UIKit.UIImage?
+  @objc final public let title: Swift.String
+  @objc final public let subtitle: Swift.String?
+  @objc final public let accessoryView: UIKit.UIView?
+  @objc final public let executionMode: FluentUI.ExecutionMode
+  @objc public var isEnabled: Swift.Bool
+  @objc public var isSelected: Swift.Bool
+  @objc public var titleColor: UIKit.UIColor
+  @objc public var subtitleColor: UIKit.UIColor
+  @objc public var imageColor: UIKit.UIColor
+  @objc public var titleSelectedColor: UIKit.UIColor?
+  @objc public var subtitleSelectedColor: UIKit.UIColor?
+  @objc public var imageSelectedColor: UIKit.UIColor?
+  @objc public var backgroundColor: UIKit.UIColor
+  @objc public var accessoryCheckmarkColor: UIKit.UIColor?
+  @objc final public let onSelected: (() -> Swift.Void)?
+  @objc final public let isAccessoryCheckmarkVisible: Swift.Bool
+  @objc public init(image: UIKit.UIImage? = nil, selectedImage: UIKit.UIImage? = nil, accessoryImage: UIKit.UIImage? = nil, title: Swift.String, subtitle: Swift.String? = nil, accessoryView: UIKit.UIView? = nil, isEnabled: Swift.Bool = true, isSelected: Swift.Bool = false, executes executionMode: FluentUI.ExecutionMode = .onSelection, onSelected: (() -> Swift.Void)? = nil, isAccessoryCheckmarkVisible: Swift.Bool = true)
+  @objc convenience public init(imageName: Swift.String, generateSelectedImage: Swift.Bool = true, title: Swift.String, subtitle: Swift.String? = nil, isEnabled: Swift.Bool = true, isSelected: Swift.Bool = false, executes executionMode: FluentUI.ExecutionMode = .onSelection, onSelected: (() -> Swift.Void)? = nil, isAccessoryCheckmarkVisible: Swift.Bool = true)
+  @objc deinit
+}
+@objc(MSFPopupMenuItemExecutionMode) public enum ExecutionMode : Swift.Int {
+  case onSelection
+  case onSelectionWithoutDismissal
+  case afterPopupMenuDismissal
+  case afterPopupMenuDismissalCompleted
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFPopupMenuTemplateItem) public protocol PopupMenuTemplateItem {
+  @objc var cellClass: any FluentUI.PopupMenuItemTemplateCell.Type { get set }
+  @objc var executionMode: FluentUI.ExecutionMode { get }
+  @objc var isSelected: Swift.Bool { get set }
+  @objc var onSelected: (() -> Swift.Void)? { get }
+}
+@objc(MSFPopupMenuItemTemplateCell) public protocol PopupMenuItemTemplateCell {
+  @objc var preservesSpaceForImage: Swift.Bool { get set }
+  @objc var customSeparatorColor: UIKit.UIColor? { get set }
+  @objc var bottomSeparatorType: FluentUI.TableViewCell.SeparatorType { get set }
+  @objc func setup(item: any FluentUI.PopupMenuTemplateItem)
+  @objc static func preferredWidth(for item: any FluentUI.PopupMenuTemplateItem, preservingSpaceForImage preserveSpaceForImage: Swift.Bool) -> CoreFoundation.CGFloat
+  @objc static func preferredHeight(for item: any FluentUI.PopupMenuTemplateItem) -> CoreFoundation.CGFloat
+}
+@objc(MSFPopupMenuSection) open class PopupMenuSection : ObjectiveC.NSObject {
+  @objc final public let title: Swift.String?
+  @objc public var items: [any FluentUI.PopupMenuTemplateItem]
+  @objc public init(title: Swift.String?, items: [any FluentUI.PopupMenuTemplateItem])
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(MSFResizingHandleView) @_Concurrency.MainActor @preconcurrency open class ResizingHandleView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency public static let height: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @objc deinit
+}
+extension FluentUI.Colors {
+  public struct Separator {
+    public static var `default`: UIKit.UIColor
+    public static var shadow: UIKit.UIColor
+  }
+  @objc public static var separatorDefault: UIKit.UIColor {
+    @objc get
+  }
+}
+@objc(MSFSeparatorStyle) public enum SeparatorStyle : Swift.Int {
+  case `default`
+  case shadow
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFSeparatorOrientation) public enum SeparatorOrientation : Swift.Int {
+  case horizontal
+  case vertical
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(MSFSeparator) @_Concurrency.MainActor @preconcurrency open class Separator : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc @_Concurrency.MainActor @preconcurrency public init(style: FluentUI.SeparatorStyle = .default, orientation: FluentUI.SeparatorOrientation = .horizontal)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor @preconcurrency public static var thickness: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @objc deinit
+}
+@objc(MSFShadowInfo) public class ShadowInfo : ObjectiveC.NSObject {
+  public init(colorOne: FluentUI.DynamicColor, blurOne: CoreFoundation.CGFloat, xOne: CoreFoundation.CGFloat, yOne: CoreFoundation.CGFloat, colorTwo: FluentUI.DynamicColor, blurTwo: CoreFoundation.CGFloat, xTwo: CoreFoundation.CGFloat, yTwo: CoreFoundation.CGFloat)
+  @objc final public let colorOne: FluentUI.DynamicColor
+  @objc final public let blurOne: CoreFoundation.CGFloat
+  @objc final public let xOne: CoreFoundation.CGFloat
+  @objc final public let yOne: CoreFoundation.CGFloat
+  @objc final public let colorTwo: FluentUI.DynamicColor
+  @objc final public let blurTwo: CoreFoundation.CGFloat
+  @objc final public let xTwo: CoreFoundation.CGFloat
+  @objc final public let yTwo: CoreFoundation.CGFloat
+  @objc deinit
+}
+@objc(MSFTableViewCellAccessoryType) public enum TableViewCellAccessoryType : Swift.Int {
+  case none
+  case disclosureIndicator
+  case detailButton
+  case checkmark
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFTableViewCellBackgroundStyleType) public enum TableViewCellBackgroundStyleType : Swift.Int {
+  case plain
+  case grouped
+  case clear
+  case custom
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension FluentUI.Colors {
+  @objc public static var tableBackground: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tableBackgroundGrouped: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tableCellBackground: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tableCellBackgroundGrouped: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tableCellBackgroundSelected: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tableCellImage: UIKit.UIColor {
+    @objc get
+  }
+}
+@_inheritsConvenienceInitializers @objc(MSFTableViewCell) @_Concurrency.MainActor @preconcurrency open class TableViewCell : UIKit.UITableViewCell {
+  @objc(MSFTableViewCellSeparatorType) public enum SeparatorType : Swift.Int {
+    case none
+    case inset
+    case full
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public static var smallHeight: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public static var mediumHeight: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public static var largeHeight: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public static var identifier: Swift.String {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public static let defaultNumberOfLinesForLargerDynamicType: Swift.Int
+  @objc @_Concurrency.MainActor @preconcurrency public static let defaultPaddingLeading: CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor @preconcurrency public static var defaultPaddingTrailing: CoreFoundation.CGFloat {
+    @objc get
+  }
+  public typealias TokenSetKeyType = FluentUI.TableViewCellTokenSet.Tokens
+  @_Concurrency.MainActor @preconcurrency public var tokenSet: FluentUI.TableViewCellTokenSet {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public class func height(title: Swift.String, subtitle: Swift.String = "", footer: Swift.String = "", titleLeadingAccessoryView: UIKit.UIView? = nil, titleTrailingAccessoryView: UIKit.UIView? = nil, subtitleLeadingAccessoryView: UIKit.UIView? = nil, subtitleTrailingAccessoryView: UIKit.UIView? = nil, footerLeadingAccessoryView: UIKit.UIView? = nil, footerTrailingAccessoryView: UIKit.UIView? = nil, customViewSize: FluentUI.MSFTableViewCellCustomViewSize = .default, customAccessoryView: UIKit.UIView? = nil, accessoryType: FluentUI.TableViewCellAccessoryType = .none, titleNumberOfLines: Swift.Int = 1, subtitleNumberOfLines: Swift.Int = 1, footerNumberOfLines: Swift.Int = 1, customAccessoryViewExtendsToEdge: Swift.Bool = false, containerWidth: CoreFoundation.CGFloat = .greatestFiniteMagnitude, isInSelectionMode: Swift.Bool = false) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency public class func height(tokenSet: FluentUI.TableViewCellTokenSet, title: Swift.String, subtitle: Swift.String = "", footer: Swift.String = "", attributedTitle: Foundation.NSAttributedString? = nil, attributedSubtitle: Foundation.NSAttributedString? = nil, attributedFooter: Foundation.NSAttributedString? = nil, isAttributedTitleSet: Swift.Bool = false, isAttributedSubtitleSet: Swift.Bool = false, isAttributedFooterSet: Swift.Bool = false, titleFont: UIKit.UIFont? = nil, subtitleFont: UIKit.UIFont? = nil, footerFont: UIKit.UIFont? = nil, titleLeadingAccessoryView: UIKit.UIView? = nil, titleTrailingAccessoryView: UIKit.UIView? = nil, subtitleLeadingAccessoryView: UIKit.UIView? = nil, subtitleTrailingAccessoryView: UIKit.UIView? = nil, footerLeadingAccessoryView: UIKit.UIView? = nil, footerTrailingAccessoryView: UIKit.UIView? = nil, customViewSize: FluentUI.MSFTableViewCellCustomViewSize = .default, customAccessoryView: UIKit.UIView? = nil, accessoryType: FluentUI.TableViewCellAccessoryType = .none, titleNumberOfLines: Swift.Int = 1, subtitleNumberOfLines: Swift.Int = 1, footerNumberOfLines: Swift.Int = 1, customAccessoryViewExtendsToEdge: Swift.Bool = false, containerWidth: CoreFoundation.CGFloat = .greatestFiniteMagnitude, isInSelectionMode: Swift.Bool = false) -> CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor @preconcurrency public class func preferredWidth(title: Swift.String, subtitle: Swift.String = "", footer: Swift.String = "", titleLeadingAccessoryView: UIKit.UIView? = nil, titleTrailingAccessoryView: UIKit.UIView? = nil, subtitleLeadingAccessoryView: UIKit.UIView? = nil, subtitleTrailingAccessoryView: UIKit.UIView? = nil, footerLeadingAccessoryView: UIKit.UIView? = nil, footerTrailingAccessoryView: UIKit.UIView? = nil, customViewSize: FluentUI.MSFTableViewCellCustomViewSize = .default, customAccessoryView: UIKit.UIView? = nil, accessoryType: FluentUI.TableViewCellAccessoryType = .none, customAccessoryViewExtendsToEdge: Swift.Bool = false, isInSelectionMode: Swift.Bool = false) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency public class func preferredWidth(tokenSet: FluentUI.TableViewCellTokenSet, title: Swift.String, subtitle: Swift.String = "", footer: Swift.String = "", attributedTitle: Foundation.NSAttributedString? = nil, attributedSubtitle: Foundation.NSAttributedString? = nil, attributedFooter: Foundation.NSAttributedString? = nil, isAttributedTitleSet: Swift.Bool = false, isAttributedSubtitleSet: Swift.Bool = false, isAttributedFooterSet: Swift.Bool = false, titleFont: UIKit.UIFont? = nil, subtitleFont: UIKit.UIFont? = nil, footerFont: UIKit.UIFont? = nil, titleLeadingAccessoryView: UIKit.UIView? = nil, titleTrailingAccessoryView: UIKit.UIView? = nil, subtitleLeadingAccessoryView: UIKit.UIView? = nil, subtitleTrailingAccessoryView: UIKit.UIView? = nil, footerLeadingAccessoryView: UIKit.UIView? = nil, footerTrailingAccessoryView: UIKit.UIView? = nil, customViewSize: FluentUI.MSFTableViewCellCustomViewSize = .default, customAccessoryView: UIKit.UIView? = nil, accessoryType: FluentUI.TableViewCellAccessoryType = .none, customAccessoryViewExtendsToEdge: Swift.Bool = false, isInSelectionMode: Swift.Bool = false) -> CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor @preconcurrency public var title: Swift.String {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var subtitle: Swift.String {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var footer: Swift.String {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var attributedTitle: Foundation.NSAttributedString? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var attributedSubtitle: Foundation.NSAttributedString? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var attributedFooter: Foundation.NSAttributedString? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var paddingLeading: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var paddingTrailing: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var titleNumberOfLines: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var subtitleNumberOfLines: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var footerNumberOfLines: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var titleNumberOfLinesForLargerDynamicType: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var subtitleNumberOfLinesForLargerDynamicType: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var footerNumberOfLinesForLargerDynamicType: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var titleLineBreakMode: UIKit.NSLineBreakMode {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var subtitleLineBreakMode: UIKit.NSLineBreakMode {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var footerLineBreakMode: UIKit.NSLineBreakMode {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var titleLeadingAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var titleTrailingAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var subtitleLeadingAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var subtitleTrailingAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var footerLeadingAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var footerTrailingAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var customViewSize: FluentUI.MSFTableViewCellCustomViewSize {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var customAccessoryView: UIKit.UIView? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var customAccessoryViewExtendsToEdge: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var topSeparatorType: FluentUI.TableViewCell.SeparatorType {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var bottomSeparatorType: FluentUI.TableViewCell.SeparatorType {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var backgroundStyleType: FluentUI.TableViewCellBackgroundStyleType {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var isInSelectionMode: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var onAccessoryTapped: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var bounds: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var frame: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var accessibilityHint: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var accessibilityValue: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var accessibilityActivationPoint: CoreFoundation.CGPoint {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency open func initialize()
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(title: Swift.String, subtitle: Swift.String = "", footer: Swift.String = "", customView: UIKit.UIView? = nil, customAccessoryView: UIKit.UIView? = nil, accessoryType: FluentUI.TableViewCellAccessoryType = .none)
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(title: Swift.String = "", attributedTitle: Foundation.NSAttributedString? = nil, subtitle: Swift.String = "", attributedSubtitle: Foundation.NSAttributedString? = nil, footer: Swift.String = "", attributedFooter: Foundation.NSAttributedString? = nil, customView: UIKit.UIView? = nil, customAccessoryView: UIKit.UIView? = nil, accessoryType: FluentUI.TableViewCellAccessoryType = .none)
+  @objc @_Concurrency.MainActor @preconcurrency open func changeAccessoryType(to accessoryType: FluentUI.TableViewCellAccessoryType)
+  @objc @_Concurrency.MainActor @preconcurrency open func setIsInSelectionMode(_ isInSelectionMode: Swift.Bool, animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func updateTextColors()
+  @available(*, deprecated, message: "Any color or stylistic changes on TableViewCell labels should be done through NSAttributedString (attributedTitle parameter of the setup method).")
+  @objc @_Concurrency.MainActor @preconcurrency public func setTitleLabelTextColor(color: UIKit.UIColor)
+  @available(*, deprecated, message: "Any color or stylistic changes on TableViewCell labels should be done through NSAttributedString (attributedSubtitle parameter of the setup method).")
+  @objc @_Concurrency.MainActor @preconcurrency public func setSubTitleLabelTextColor(color: UIKit.UIColor)
+  @available(*, deprecated, message: "Any color or stylistic changes on TableViewCell labels should be done through NSAttributedString (attributedFooter parameter of the setup method).")
+  @_Concurrency.MainActor @preconcurrency public func setFooterLabelTextColor(color: UIKit.UIColor)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency open func layoutContentSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForReuse()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func didMoveToWindow()
+  @_Concurrency.MainActor @preconcurrency open func selectionDidChange()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func setSelected(_ selected: Swift.Bool, animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func updateConfiguration(using state: UIKit.UICellConfigurationState)
+  public typealias TokenSetType = FluentUI.TableViewCellTokenSet
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TableViewCellTokenSet : FluentUI.ControlTokenSet<FluentUI.TableViewCellTokenSet.Tokens> {
+  public enum Tokens : FluentUI.TokenSetKey {
+    case backgroundColor
+    case backgroundGroupedColor
+    case cellBackgroundColor
+    case cellBackgroundGroupedColor
+    case cellBackgroundSelectedColor
+    case imageColor
+    case customViewDimensions
+    case customViewTrailingMargin
+    case titleColor
+    case subtitleColor
+    case footerColor
+    case selectionIndicatorOffColor
+    case titleFont
+    case subtitleTwoLinesFont
+    case subtitleThreeLinesFont
+    case footerFont
+    case accessoryDisclosureIndicatorColor
+    case accessoryDetailButtonColor
+    case mainBrandColor
+    case destructiveTextColor
+    case communicationTextColor
+    case paddingLeading
+    public static func == (a: FluentUI.TableViewCellTokenSet.Tokens, b: FluentUI.TableViewCellTokenSet.Tokens) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [FluentUI.TableViewCellTokenSet.Tokens]
+    nonisolated public static var allCases: [FluentUI.TableViewCellTokenSet.Tokens] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@objc public enum MSFTableViewCellCustomViewSize : Swift.Int, Swift.CaseIterable {
+  case `default`
+  case zero
+  case small
+  case medium
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FluentUI.MSFTableViewCellCustomViewSize]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FluentUI.MSFTableViewCellCustomViewSize] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(MSFTableViewHeaderFooterViewDelegate) public protocol TableViewHeaderFooterViewDelegate {
+  @objc optional func headerFooterView(_ headerFooterView: FluentUI.TableViewHeaderFooterView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers @objc(MSFTableViewHeaderFooterView) @_Concurrency.MainActor @preconcurrency open class TableViewHeaderFooterView : UIKit.UITableViewHeaderFooterView {
+  @objc(MSFTableViewHeaderFooterViewAccessoryButtonStyle) public enum AccessoryButtonStyle : Swift.Int {
+    case regular
+    case primary
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(MSFTableViewHeaderFooterViewStyle) public enum Style : Swift.Int {
+    case header
+    case divider
+    case dividerHighlighted
+    case footer
+    case headerPrimary
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public static var identifier: Swift.String {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public class func height(style: FluentUI.TableViewHeaderFooterView.Style, title: Swift.String, titleNumberOfLines: Swift.Int = 1, containerWidth: CoreFoundation.CGFloat = .greatestFiniteMagnitude, accessoryView: UIKit.UIView? = nil) -> CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor @preconcurrency public class func preferredWidth(style: FluentUI.TableViewHeaderFooterView.Style, title: Swift.String, accessoryView: UIKit.UIView? = nil, leadingView: UIKit.UIView? = nil) -> CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor @preconcurrency open var accessoryButtonStyle: FluentUI.TableViewHeaderFooterView.AccessoryButtonStyle {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var titleNumberOfLines: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency open var onAccessoryButtonTapped: (() -> Swift.Void)?
+  @objc @_Concurrency.MainActor @preconcurrency open var onHeaderViewTapped: (() -> Swift.Void)?
+  @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any FluentUI.TableViewHeaderFooterViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var bounds: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var frame: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency open func initialize()
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(style: FluentUI.TableViewHeaderFooterView.Style, title: Swift.String, accessoryButtonTitle: Swift.String = "")
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(style: FluentUI.TableViewHeaderFooterView.Style, title: Swift.String, accessoryButtonTitle: Swift.String = "", leadingView: UIKit.UIView? = nil)
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(style: FluentUI.TableViewHeaderFooterView.Style, attributedTitle: Foundation.NSAttributedString, accessoryButtonTitle: Swift.String = "")
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(style: FluentUI.TableViewHeaderFooterView.Style, attributedTitle: Foundation.NSAttributedString, accessoryButtonTitle: Swift.String = "", leadingView: UIKit.UIView? = nil)
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(style: FluentUI.TableViewHeaderFooterView.Style, title: Swift.String, accessoryView: UIKit.UIView)
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(style: FluentUI.TableViewHeaderFooterView.Style, title: Swift.String, accessoryView: UIKit.UIView, leadingView: UIKit.UIView? = nil)
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(style: FluentUI.TableViewHeaderFooterView.Style, accessoryButtonTitle: Swift.String)
+  @objc @_Concurrency.MainActor @preconcurrency open func setup(style: FluentUI.TableViewHeaderFooterView.Style, title: Swift.String)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForReuse()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func didMoveToWindow()
+  @objc deinit
+}
+extension FluentUI.TableViewHeaderFooterView : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+}
+public protocol TokenizedControl {
+  associatedtype TokenSetKeyType : Swift.CaseIterable, Swift.Hashable
+  associatedtype TokenSetType : FluentUI.ControlTokenSet<Self.TokenSetKeyType>
+  var tokenSet: Self.TokenSetType { get }
+}
+public protocol TokenizedControlOverridable : FluentUI.TokenizedControl {
+  func overrideTokens(_ overrideTokens: [Self.TokenSetKeyType : FluentUI.ControlTokenValue]?) -> Self
+}
+public typealias TokenSetKey = Swift.CaseIterable & Swift.Hashable
+@_hasMissingDesignatedInitializers final public class TokenSet<T, V> where T : Swift.CaseIterable, T : Swift.Hashable {
+  final public subscript(token: T) -> V {
+    get
+    set(value)
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(MSFTouchForwardingView) @_Concurrency.MainActor @preconcurrency open class TouchForwardingView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func point(inside point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UIColor {
+  @objc convenience dynamic public init(light: UIKit.UIColor, lightHighContrast: UIKit.UIColor? = nil, lightElevated: UIKit.UIColor? = nil, lightElevatedHighContrast: UIKit.UIColor? = nil, dark: UIKit.UIColor? = nil, darkHighContrast: UIKit.UIColor? = nil, darkElevated: UIKit.UIColor? = nil, darkElevatedHighContrast: UIKit.UIColor? = nil)
+  public var dynamicColor: FluentUI.DynamicColor? {
+    get
+  }
+  @objc convenience dynamic public init(colorValue: FluentUI.ColorValue)
+  @objc convenience dynamic public init(dynamicColor: FluentUI.DynamicColor)
+}
+extension FluentUI.ActivityIndicator : FluentUI.TokenizedControl {}
+extension FluentUI.ActivityIndicator : FluentUI.TokenizedControlOverridable {}
+extension FluentUI.ActivityIndicator : Swift.Sendable {}
+extension FluentUI.MSFActivityIndicatorSize : Swift.Equatable {}
+extension FluentUI.MSFActivityIndicatorSize : Swift.Hashable {}
+extension FluentUI.MSFActivityIndicatorSize : Swift.RawRepresentable {}
+extension FluentUI.AliasTokens.BrandColorsTokens : Swift.RawRepresentable {}
+extension FluentUI.AliasTokens.ForegroundColorsTokens : Swift.RawRepresentable {}
+extension FluentUI.AliasTokens.BackgroundColorsTokens : Swift.RawRepresentable {}
+extension FluentUI.AliasTokens.StrokeColorsTokens : Swift.RawRepresentable {}
+extension FluentUI.AliasTokens.ShadowColorsTokens : Swift.RawRepresentable {}
+extension FluentUI.AliasTokens.TypographyTokens : Swift.RawRepresentable {}
+extension FluentUI.AliasTokens.ShadowTokens : Swift.RawRepresentable {}
+extension FluentUI.AliasTokens.ElevationTokens : Swift.RawRepresentable {}
+extension FluentUI.Avatar : FluentUI.TokenizedControl {}
+extension FluentUI.Avatar : FluentUI.TokenizedControlOverridable {}
+extension FluentUI.Avatar : Swift.Sendable {}
+extension FluentUI.MSFAvatarGroupStyle : Swift.Equatable {}
+extension FluentUI.MSFAvatarGroupStyle : Swift.Hashable {}
+extension FluentUI.MSFAvatarGroupStyle : Swift.RawRepresentable {}
+extension FluentUI.AvatarGroup : FluentUI.TokenizedControl {}
+extension FluentUI.AvatarGroup : FluentUI.TokenizedControlOverridable {}
+extension FluentUI.AvatarGroup : Swift.Sendable {}
+extension FluentUI.MSFAvatarStyle : Swift.Equatable {}
+extension FluentUI.MSFAvatarStyle : Swift.Hashable {}
+extension FluentUI.MSFAvatarStyle : Swift.RawRepresentable {}
+extension FluentUI.MSFAvatarSize : Swift.Equatable {}
+extension FluentUI.MSFAvatarSize : Swift.Hashable {}
+extension FluentUI.MSFAvatarSize : Swift.RawRepresentable {}
+extension FluentUI.BottomSheetInteraction : Swift.Equatable {}
+extension FluentUI.BottomSheetInteraction : Swift.Hashable {}
+extension FluentUI.BottomSheetInteraction : Swift.RawRepresentable {}
+extension FluentUI.BottomSheetExpansionState : Swift.Equatable {}
+extension FluentUI.BottomSheetExpansionState : Swift.Hashable {}
+extension FluentUI.BottomSheetExpansionState : Swift.RawRepresentable {}
+extension FluentUI.Button : FluentUI.TokenizedControl {}
+extension FluentUI.ButtonStyle : Swift.Equatable {}
+extension FluentUI.ButtonStyle : Swift.Hashable {}
+extension FluentUI.ButtonStyle : Swift.RawRepresentable {}
+extension FluentUI.Colors.Palette : Swift.Equatable {}
+extension FluentUI.Colors.Palette : Swift.Hashable {}
+extension FluentUI.Colors.Palette : Swift.RawRepresentable {}
+extension FluentUI.DimmingViewType : Swift.Equatable {}
+extension FluentUI.DimmingViewType : Swift.Hashable {}
+extension FluentUI.DimmingViewType : Swift.RawRepresentable {}
+extension FluentUI.DrawerResizingBehavior : Swift.Equatable {}
+extension FluentUI.DrawerResizingBehavior : Swift.Hashable {}
+extension FluentUI.DrawerResizingBehavior : Swift.RawRepresentable {}
+extension FluentUI.DrawerPresentationDirection : Swift.Equatable {}
+extension FluentUI.DrawerPresentationDirection : Swift.Hashable {}
+extension FluentUI.DrawerPresentationDirection : Swift.RawRepresentable {}
+extension FluentUI.DrawerPresentationStyle : Swift.Equatable {}
+extension FluentUI.DrawerPresentationStyle : Swift.Hashable {}
+extension FluentUI.DrawerPresentationStyle : Swift.RawRepresentable {}
+extension FluentUI.DrawerPresentationBackground : Swift.Equatable {}
+extension FluentUI.DrawerPresentationBackground : Swift.Hashable {}
+extension FluentUI.DrawerPresentationBackground : Swift.RawRepresentable {}
+extension FluentUI.TextStyle : Swift.Equatable {}
+extension FluentUI.TextStyle : Swift.Hashable {}
+extension FluentUI.TextStyle : Swift.RawRepresentable {}
+extension FluentUI.GlobalTokens.NeutralColorsToken : Swift.RawRepresentable {}
+extension FluentUI.GlobalTokens.SharedColorSets : Swift.RawRepresentable {}
+extension FluentUI.GlobalTokens.SharedColorsTokens : Swift.RawRepresentable {}
+extension FluentUI.TextColorStyle : Swift.Equatable {}
+extension FluentUI.TextColorStyle : Swift.Hashable {}
+extension FluentUI.TextColorStyle : Swift.RawRepresentable {}
+extension FluentUI.MSFAvatarPresence : Swift.Equatable {}
+extension FluentUI.MSFAvatarPresence : Swift.Hashable {}
+extension FluentUI.MSFAvatarPresence : Swift.RawRepresentable {}
+extension FluentUI.ObscureStyle : Swift.Equatable {}
+extension FluentUI.ObscureStyle : Swift.Hashable {}
+extension FluentUI.ObscureStyle : Swift.RawRepresentable {}
+extension FluentUI.ExecutionMode : Swift.Equatable {}
+extension FluentUI.ExecutionMode : Swift.Hashable {}
+extension FluentUI.ExecutionMode : Swift.RawRepresentable {}
+extension FluentUI.SeparatorStyle : Swift.Equatable {}
+extension FluentUI.SeparatorStyle : Swift.Hashable {}
+extension FluentUI.SeparatorStyle : Swift.RawRepresentable {}
+extension FluentUI.SeparatorOrientation : Swift.Equatable {}
+extension FluentUI.SeparatorOrientation : Swift.Hashable {}
+extension FluentUI.SeparatorOrientation : Swift.RawRepresentable {}
+extension FluentUI.TableViewCellAccessoryType : Swift.Equatable {}
+extension FluentUI.TableViewCellAccessoryType : Swift.Hashable {}
+extension FluentUI.TableViewCellAccessoryType : Swift.RawRepresentable {}
+extension FluentUI.TableViewCellBackgroundStyleType : Swift.Equatable {}
+extension FluentUI.TableViewCellBackgroundStyleType : Swift.Hashable {}
+extension FluentUI.TableViewCellBackgroundStyleType : Swift.RawRepresentable {}
+extension FluentUI.TableViewCell : FluentUI.TokenizedControl {}
+extension FluentUI.TableViewCell.SeparatorType : Swift.Equatable {}
+extension FluentUI.TableViewCell.SeparatorType : Swift.Hashable {}
+extension FluentUI.TableViewCell.SeparatorType : Swift.RawRepresentable {}
+extension FluentUI.MSFTableViewCellCustomViewSize : Swift.Equatable {}
+extension FluentUI.MSFTableViewCellCustomViewSize : Swift.Hashable {}
+extension FluentUI.MSFTableViewCellCustomViewSize : Swift.RawRepresentable {}
+extension FluentUI.TableViewHeaderFooterView.AccessoryButtonStyle : Swift.Equatable {}
+extension FluentUI.TableViewHeaderFooterView.AccessoryButtonStyle : Swift.Hashable {}
+extension FluentUI.TableViewHeaderFooterView.AccessoryButtonStyle : Swift.RawRepresentable {}
+extension FluentUI.TableViewHeaderFooterView.Style : Swift.Equatable {}
+extension FluentUI.TableViewHeaderFooterView.Style : Swift.Hashable {}
+extension FluentUI.TableViewHeaderFooterView.Style : Swift.RawRepresentable {}
