@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-ios</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="NativeLibraries/CommunicationUI_Proxy.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>true</ForceLoad>
+    </NativeReference>
+    <NativeReference
+      Include="ProxyLibs/CommunicationUI-Proxy/Framework/Debug-universal/CommunicationUI_Proxy.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>true</ForceLoad>
+      <IsCxx>true</IsCxx>
+      <SmartLink>False</SmartLink>
+      <Frameworks>Foundation UIKit</Frameworks>
+      <WeakFrameworks>CoreGraphics</WeakFrameworks>
+      <LinkWith>libswiftCore.dylib</LinkWith> <!-- Adjust depending on Swift runtime -->
+    </NativeReference>
+    <NativeReference
+      Include="ProxyLibs\CommunicationUI-Proxy\Framework\Debug-universal\AzureCommunicationCalling.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference
+      Include="ProxyLibs\CommunicationUI-Proxy\Framework\Debug-universal\FluentUI.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference
+      Include="ProxyLibs\CommunicationUI-Proxy\Framework\Debug-universal\AzureCommunicationUICalling.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference
+      Include="ProxyLibs\CommunicationUI-Proxy\Framework\Debug-universal\AzureCommunicationCommon.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference
+      Include="ProxyLibs\CommunicationUI-Proxy\Framework\Debug-universal\AzureCore.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference
+      Include="ProxyLibs\CommunicationUI-Proxy\Framework\Debug-universal\CommunicationUI_Proxy.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+  </ItemGroup>
+</Project>
