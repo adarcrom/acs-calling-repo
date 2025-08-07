@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android.Azure.Common.Bindings", "Android.Azure.Common.Bindings\Android.Azure.Common.Bindings.csproj", "{E0D6DDFB-DDC0-4021-9331-3349FD4AD02C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android.Azure.Core.Bindings", "Android.Azure.Core.Bindings\Android.Azure.Core.Bindings.csproj", "{890EA7A4-7FCD-4577-8E6F-185A40B4A3AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android.Azure.Log.Bindings", "Android.Azure.Log.Bindings\Android.Azure.Log.Bindings.csproj", "{E7B7453A-44C7-451A-A027-EFC35BC0547A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android.CallingUI.Bindings", "Android.CallingUI.Bindings\Android.CallingUI.Bindings.csproj", "{0B433E3E-60C3-4BAF-8D0C-F11582523C8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOS.CallingUI.Binding", "iOS.CallingUI.Binding\iOS.CallingUI.Binding.csproj", "{C352EE5C-99AA-4298-A96B-6B5F8A201CB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicationCallingSampleMauiApp", "CommunicationCallingSampleMauiApp\CommunicationCallingSampleMauiApp.csproj", "{3DAD2F8A-7314-47EA-A234-FDD15AC50F68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0D6DDFB-DDC0-4021-9331-3349FD4AD02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D6DDFB-DDC0-4021-9331-3349FD4AD02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D6DDFB-DDC0-4021-9331-3349FD4AD02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D6DDFB-DDC0-4021-9331-3349FD4AD02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{890EA7A4-7FCD-4577-8E6F-185A40B4A3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{890EA7A4-7FCD-4577-8E6F-185A40B4A3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{890EA7A4-7FCD-4577-8E6F-185A40B4A3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{890EA7A4-7FCD-4577-8E6F-185A40B4A3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B7453A-44C7-451A-A027-EFC35BC0547A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B7453A-44C7-451A-A027-EFC35BC0547A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B7453A-44C7-451A-A027-EFC35BC0547A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B7453A-44C7-451A-A027-EFC35BC0547A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B433E3E-60C3-4BAF-8D0C-F11582523C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B433E3E-60C3-4BAF-8D0C-F11582523C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B433E3E-60C3-4BAF-8D0C-F11582523C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B433E3E-60C3-4BAF-8D0C-F11582523C8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C352EE5C-99AA-4298-A96B-6B5F8A201CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C352EE5C-99AA-4298-A96B-6B5F8A201CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C352EE5C-99AA-4298-A96B-6B5F8A201CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C352EE5C-99AA-4298-A96B-6B5F8A201CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DAD2F8A-7314-47EA-A234-FDD15AC50F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DAD2F8A-7314-47EA-A234-FDD15AC50F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DAD2F8A-7314-47EA-A234-FDD15AC50F68}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DAD2F8A-7314-47EA-A234-FDD15AC50F68}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
